@@ -2,9 +2,9 @@ Port 2222
 
 PidFile ./sshd.pid
 
-HostKey ./host_keys/ssh_host_rsa_key
-HostKey ./host_keys/ssh_host_ecdsa_key
-HostKey ./host_keys/ssh_host_ed25519_key
+HostKey /host_keys/ssh_host_rsa_key
+HostKey /host_keys/ssh_host_ecdsa_key
+HostKey /host_keys/ssh_host_ed25519_key
 
 SyslogFacility AUTHPRIV
 
