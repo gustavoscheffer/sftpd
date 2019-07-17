@@ -5,7 +5,7 @@ RUN yum install openssh-server openssh-clients -y
 RUN  mkdir -p /host_keys
 
 COPY ./sshd_config ./sshd_config
-COPY ./host_keys/* /host_keys.
+COPY ./host_keys/* /host_keys/
 
 RUN chmod 600 ./host_keys/ssh_host_*_key
 
