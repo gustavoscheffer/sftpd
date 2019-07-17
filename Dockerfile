@@ -9,8 +9,7 @@ COPY ./host_keys ./host_keys
 
 RUN chmod 600 ./host_keys/ssh_host_*_key
 
-RUN groupadd sftpd_user; \ 
-    useradd -g sftpd_user -m  -d /home/sftpd_user -p ucStYVz9DqV7U sftpd_user; \ 
+RUN useradd -g root -m  -d /home/sftpd_user -p ucStYVz9DqV7U sftpd_user; \ 
     mkdir -p /home/sftpd_user/.ssh
 
 COPY ./keys/* /home/sftpd_user/.ssh/
