@@ -17,7 +17,7 @@ COPY ./keys/* /home/sftpd_user/.ssh/
 RUN chmod 600 home/sftpd_user/.ssh/id_rsa; \ 
     chmod 600 home/sftpd_user/.ssh/authorized_keys; \ 
     chmod 644 home/sftpd_user/.ssh/id_rsa.pub; \ 
-    chown -R sftpd_user:sftpd_user /home/sftpd_user/.ssh
+    chown -R sftpd_user:root /home/sftpd_user/.ssh
 
 EXPOSE 2222
 
