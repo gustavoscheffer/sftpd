@@ -1,5 +1,7 @@
 FROM centos
 
+USER root
+
 RUN yum install openssh-server openssh-clients -y
 
 COPY ./sshd_config ./sshd_config
