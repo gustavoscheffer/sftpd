@@ -8,20 +8,16 @@ HostKey /host_keys/ssh_host_ed25519_key
 
 SyslogFacility AUTHPRIV
 
-PermitRootLogin yes
+PermitRootLogin no
 
 PubkeyAuthentication yes
 
 AuthorizedKeysFile	.ssh/authorized_keys
 
-PasswordAuthentication yes
-
 ChallengeResponseAuthentication no
 
 GSSAPIAuthentication yes
 GSSAPICleanupCredentials no
-
-UsePAM yes
 
 X11Forwarding yes
 
@@ -33,3 +29,7 @@ AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
 AcceptEnv XMODIFIERS
 
 Subsystem	sftp	/usr/libexec/openssh/sftp-server
+
+Match Group sftpusers
+ChrootDirectory /data/%u
+ForceCommand internal-sftp
