@@ -11,13 +11,11 @@ RUN mkdir -p /data/sftp ; \
 COPY ./sshd_config ./sshd_config
 COPY ./host_keys/* /host_keys/
 
-RUN chmod 600 /host_keys/ssh_host_*_key
-
-
-RUN useradd -g sftpusers -m -d /upload -p ucStYVz9DqV7U -s /sbin/nologin mysftpuser; \
+RUN chmod 600 /host_keys/ssh_host_*_key; \
+    useradd -g sftpusers -m -d /upload -p ucStYVz9DqV7U -s /sbin/nologin mysftpuser; \
     mkdir -p /upload/.ssh
 
-COPY ./keys/* /upload/.ssh
+COPY ./keys/* /upload/.ssh/
 
 RUN chmod 600 /upload/.ssh/id_rsa; \ 
     chmod 600 /upload/.ssh/authorized_keys; \ 
