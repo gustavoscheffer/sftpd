@@ -1,4 +1,4 @@
-Port 2222
+Port 8080
 
 PidFile ./sshd.pid
 
